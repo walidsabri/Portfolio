@@ -1,10 +1,10 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Pages/Root";
-import Home from "./pages/Home";
-import Works from "./pages/Projects.jsx";
+import Home from "./Pages/Home";
+import Works from "./Pages/Projects.jsx";
 
-import Error from "./pages/Error.jsx";
+import Error from "./Pages/Error.jsx";
 
 const router = createBrowserRouter([
   {
