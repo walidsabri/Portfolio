@@ -1,7 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootLayout from "./Pages/Root";
-import Home from "./Pages/Home";
+import RootLayout from "./Pages/Root.jsx";
+import Home from "./Pages/Home.jsx";
 import Works from "./Pages/Projects.jsx";
 
 import Error from "./Pages/Error.jsx";
