@@ -1,7 +1,7 @@
 import "./ProjectsDetails.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { projects } from "../../PROJECTS.JS";
+import { projects } from "../../PROJECTS.js";
 import back from "../../assets/back.png";
 
 import ContactMe from "./ContactMe";

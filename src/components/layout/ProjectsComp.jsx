@@ -3,7 +3,7 @@ import "./projectsComp.css";
 import { Link } from "react-router-dom";
 import more from "../../assets/more.png";
 import code from "../../assets/code.png";
-import { projects } from "../../PROJECTS.JS";
+import { projects } from "../../PROJECTS.js";
 
 // Project data array
 
