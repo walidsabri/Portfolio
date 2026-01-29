@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #000;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile adjustments for fixed nav */
+@media (max-width: 767px) {
+  body {
+    padding-top: 68px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 54px;
+  }
+}

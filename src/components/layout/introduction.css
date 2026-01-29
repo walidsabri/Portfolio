@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes drawX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes drawY {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes colorFade {
+  0% {
+    border-color: white;
+  }
+  80% {
+    border-color: #53535365;
+  }
+}
+
+@keyframes reactSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes downloadBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.Header {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   TOP GRID
+========================= */
+.empty-top {
+  height: 50px;
+  width: 60%;
+  display: flex;
+}
+
+.empty-top-div {
+  width: calc(100% / 3);
+  position: relative;
+}
+
+.empty-top-div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #53535365;
+  transform-origin: top;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+/* =========================
+   INTRO CONTAINER
+========================= */
+.introduction {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TOP & BOTTOM */
+.introduction::before,
+.introduction::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #53535365;
+  transform-origin: left;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+.introduction::before {
+  top: 0;
+}
+.introduction::after {
+  bottom: 0;
+}
+
+/* LEFT & RIGHT */
+.v-line {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #53535365;
+  transform-origin: top;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+.v-line.left {
+  left: 0;
+}
+.v-line.right {
+  right: 0;
+}
+
+/* =========================
+   CIRCLES
+========================= */
+.introduction::marker {
+  content: "";
+}
+
+.introduction::before,
+.introduction::after {
+  z-index: 1;
+}
+
+.introduction::before {
+  box-shadow: -25px -25px 0 25px transparent;
+}
+
+/* top-left */
+.introduction::after {
+  box-shadow: calc(100% + 25px) -25px 0 -24px transparent;
+}
+
+/* =========================
+   FIRST INTRO
+========================= */
+.first-intro {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 99;
+}
+
+.first-intro::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000;
+  border: 1px dashed #53535365;
+  z-index: 0;
+}
+
+.first-intro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #53535365;
+  transform-origin: left;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+.first-intro-txt {
+  font-family: "Geist", sans-serif;
+  font-size: 76px;
+  font-weight: 700;
+  color: rgb(237, 237, 237);
+  margin: 0;
+}
+
+/* =========================
+   SECOND INTRO
+========================= */
+.seconde-intro {
+  padding: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.seconde-intro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed #53535365;
+  transform-origin: left;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+.name {
+  font-family: "Geist", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(250, 250, 250);
+}
+
+.name-2 {
+  color: rgb(136, 136, 136);
+  font-family: "Geist", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* =========================
+   THIRD INTRO
+========================= */
+.third-intro {
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
+
+.empty-1,
+.empty-2,
+.about-btn-div {
+  width: 33%;
+  position: relative;
+}
+
+.empty-1,
+.empty-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-2::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px dashed #53535365;
+  background: #000;
+  z-index: 2;
+}
+
+.react-logo {
+  width: 50px;
+  height: 50px;
+  animation: reactSpin 10s linear infinite;
+  opacity: 0.7;
+}
+
+.about-btn-div::before,
+.about-btn-div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #53535365;
+  transform-origin: top;
+  animation:
+    drawY 2s ease forwards,
+    colorFade 2s ease forwards;
+}
+
+.about-btn-div::before {
+  left: 0;
+}
+.about-btn-div::after {
+  right: 0;
+}
+
+.about-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.btns-group {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+}
+.about-me-btn {
+  background: rgb(237, 237, 237);
+  font-family: "Geist", sans-serif;
+  font-size: 17px;
+  border-radius: 6px;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.res-btn {
+  font-family: "Geist", sans-serif;
+  font-size: 17px;
+  border-radius: 6px;
+  padding: 10px;
+  border: none;
+  background: #53535328;
+  color: rgb(250, 250, 250);
+  border: 1px solid #53535365;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.res-btn:hover,
+.about-me-btn:hover {
+  opacity: 80%;
+}
+
+.download-icon {
+  animation: downloadBounce 1.5s ease-in-out infinite;
+}
+
+.about-btn-div p {
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  color: rgb(136, 136, 136);
+  text-align: center;
+}
+
+.about-btn-div::before,
+.about-btn-div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #53535365;
+  transform-origin: top;
+  animation:
+    drawY 1.2s ease forwards,
+    colorFade 1.2s ease forwards;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .Header {
+    margin-top: 60px;
+  }
+
+  .empty-top,
+  .introduction {
+    width: 75%;
+  }
+
+  .first-intro-txt {
+    font-size: 60px;
+  }
+
+  .name,
+  .name-2 {
+    font-size: 18px;
+  }
+
+  .about-me-btn {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .Header {
+    margin-top: 40px;
+  }
+
+  .empty-top,
+  .introduction {
+    width: 90%;
+  }
+
+  .empty-top {
+    height: 30px;
+  }
+
+  .first-intro .first-intro-txt {
+    font-size: 45px;
+    line-height: 1.2;
+  }
+
+  .seconde-intro {
+    padding: 30px 20px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .seconde-intro .name {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .seconde-intro .name-2 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .introduction .third-intro {
+    height: 130px;
+  }
+  .third-intro .btns-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5px;
+    align-items: center;
+  }
+  .third-intro .empty-1,
+  .third-intro .empty-2 {
+    width: 20%;
+  }
+
+  .btns-group .about-me-btn,
+  .btns-group .res-btn {
+    font-size: 15px;
+    padding: 7px 3px;
+    width: 50%;
+  }
+  .about-btn-div {
+    width: 60%;
+  }
+
+  .about-btn-div p {
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .Header {
+    margin-top: 0px;
+  }
+
+  .empty-top,
+  .introduction {
+    width: 95%;
+  }
+
+  .empty-top {
+    height: 30px;
+  }
+
+  .first-intro {
+    padding: 15px;
+  }
+
+  .first-intro-txt {
+    font-size: 32px;
+  }
+
+  .seconde-intro {
+    padding: 20px 15px;
+  }
+
+  .name,
+  .name-2 {
+    font-size: 14px;
+  }
+
+  .third-intro {
+    height: 110px;
+  }
+
+  .about-me-btn {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .about-btn-div p {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+.project-details-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 70%;
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 100px; /* Adjust vertical spacing */
+  /* border: 1px solid red; */
+  padding: 20px;
+}
+.back-btn {
+  list-style: none;
+  text-decoration: none;
+  font-family: "Geist Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(136, 136, 136);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.project-d-title {
+  display: flex;
+  font-family: "Geist", sans-serif;
+  font-style: normal;
+  color: rgb(237, 237, 237);
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  gap: 5px;
+}
+.project-d-title img {
+  vertical-align: bottom;
+  width: 70px;
+  height: 70px;
+}
+.project-details-txt {
+  font-family: "Geist Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(237, 237, 237);
+  margin-left: 70px;
+  margin-top: 0;
+  font-style: normal;
+  margin-bottom: 50px;
+}
+
+.process {
+  font-family: "Geist Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(136, 136, 136);
+  margin-bottom: 50px;
+}
+.tech-used {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.tech-used p {
+  font-family: "Geist", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  color: rgb(237, 237, 237);
+  font-weight: 700;
+}
+.tech-list {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+  gap: 10px;
+  margin-top: 10px;
+}
+.tech-list li {
+  font-family: "Geist", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(237, 237, 237);
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 7px;
+  background: #1f1f1f;
+  text-align: center;
+  align-self: center;
+  font-style: normal;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .project-details-container {
+    width: 85%;
+    margin-top: 80px;
+  }
+
+  .project-d-title {
+    font-size: 45px;
+  }
+
+  .project-d-title img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .project-details-txt {
+    margin-left: 60px;
+    font-size: 15px;
+  }
+
+  .process {
+    font-size: 15px;
+  }
+
+  .tech-used p {
+    font-size: 18px;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .project-details-container {
+    width: 90%;
+    margin-top: 60px;
+    padding: 15px;
+  }
+
+  .back-btn {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .project-d-title {
+    font-size: 36px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-d-title img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .project-details-txt {
+    margin-left: 0;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .process {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .tech-used p {
+    font-size: 16px;
+  }
+
+  .tech-list {
+    flex-wrap: wrap;
+  }
+
+  .tech-list li {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .project-details-container {
+    width: 95%;
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  .back-btn {
+    font-size: 13px;
+  }
+
+  .project-d-title {
+    font-size: 28px;
+  }
+
+  .project-d-title img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .project-details-txt {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .process {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .tech-used p {
+    font-size: 14px;
+  }
+
+  .tech-list li {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+}
