@@ -1,5 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+
+/* Light Theme (default) */
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #171717;
+  --text-primary: #171717;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --input-bg: #f0f0f0;
+  --input-text: #000000;
+  --input-border-focus: #666666;
+  --logo-filter: brightness(0.3) saturate(1.2);
+  --tech-logo-filter: brightness(0.1);
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+  --bg-primary: #000;
+  --bg-secondary: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #444444;
+  --input-bg: #1f1f1f;
+  --input-text: #ffffff;
+  --input-border-focus: #888888;
+  --logo-filter: brightness(1) saturate(1);
+  --tech-logo-filter: brightness(1.5);
+}
+
+/* Default (dark) */
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #333333;
+  --input-bg: #1f1f1f;
+  --input-text: #ffffff;
+  --input-border-focus: #888888;
+  --logo-filter: brightness(1) saturate(1);
+  --tech-logo-filter: brightness(1.5);
+}
+
 body,
 #root {
   margin: 0;
@@ -7,8 +50,12 @@ body,
   box-sizing: border-box;
   min-width: 320px;
   min-height: 100vh;
-  background: #000;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 body {

@@ -12,7 +12,7 @@
   font-family: "Geist", sans-serif;
   font-size: 60px;
   font-weight: 700;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   margin: 0;
   text-align: center;
 }
@@ -35,12 +35,12 @@
   font-family: "Geist", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: rgb(136, 136, 136);
+  color: var(--text-secondary);
   margin: 0;
   list-style: none;
 }
 .about-content .about-me-informations li span {
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
 }
 .about-content .pic {
   height: 250px;
@@ -59,7 +59,7 @@
   font-family: "Geist", sans-serif;
   font-size: 60px;
   font-weight: 700;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   margin: 0;
   text-align: center;
 }
@@ -74,18 +74,28 @@
   text-align: center;
   list-style: none;
 }
+.techonolgies ul li img {
+  filter: var(--tech-logo-filter, none);
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+.techonolgies ul li img:hover {
+  transform: scale(1.1);
+}
 .techonolgies ul li p {
   font-family: "Geist Mono", monospace;
   font-size: 14px;
   font-weight: 400;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   margin: 0;
 }
 .techonolgies .tech-subtitle {
   font-family: "Geist Mono", monospace;
   font-size: 16px;
   font-weight: 400;
-  color: rgb(136, 136, 136);
+  color: var(--text-secondary);
   margin: 0;
   text-align: center;
 }

@@ -14,8 +14,8 @@
   font-style: normal;
   top: 0;
   z-index: 999;
-  background-color: #0a0a0a;
-  border-bottom: 0.5px solid #242424;
+  background-color: var(--bg-primary);
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 .nav-logo {
@@ -29,12 +29,13 @@
 .logo-icon {
   width: 24px;
   height: 24px;
+  color: var(--text-primary);
 }
 
 .logo-slash {
   font-size: 20px;
   font-weight: 300;
-  color: rgb(136, 136, 136);
+  color: var(--text-primary);
   margin: 0 2px;
 }
 
@@ -43,20 +44,20 @@
   font-style: normal;
   font-size: 19px;
   font-weight: 700;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
 }
 
 .logo-divider {
   font-size: 18px;
   font-weight: 300;
-  color: rgb(136, 136, 136);
+  color: var(--text-primary);
 }
 
 .logo-title {
   font-family: "Geist Mono", monospace;
   font-size: 14px;
   font-weight: 400;
-  color: rgb(136, 136, 136);
+  color: var(--text-secondary);
 }
 
 .nav .nav-links {
@@ -86,6 +87,79 @@
 }
 
 /* =========================
+   THEME TOGGLE BUTTON
+========================= */
+.theme-switch {
+  width: 50px;
+  height: 28px;
+  border-radius: 34px;
+  background: var(--bg-primary);
+  border: 1.5px solid #444444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2px 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.theme-switch .theme-icon {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.theme-switch:hover {
+  border-color: #666666;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="light"] .theme-switch {
+  background: var(--bg-primary);
+  border-color: #d0d0d0;
+  justify-content: flex-end;
+}
+
+:root[data-theme="light"] .theme-switch .theme-icon {
+  fill: #1a1a1a;
+}
+
+:root[data-theme="light"] .theme-switch:hover {
+  border-color: #999999;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Theme Switch */
+@media (max-width: 767px) {
+  .theme-switch {
+    width: 44px;
+    height: 24px;
+    padding: 2px 3px;
+  }
+
+  .theme-switch .theme-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-switch {
+    width: 40px;
+    height: 22px;
+    padding: 2px 2px;
+  }
+
+  .theme-switch .theme-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* =========================
    BURGER MENU
 ========================= */
 .burger {
@@ -107,7 +181,7 @@
   position: absolute;
   height: 2px;
   width: 100%;
-  background: rgb(237, 237, 237);
+  background: var(--text-primary);
   border-radius: 2px;
   opacity: 1;
   left: 0;
@@ -174,6 +248,11 @@
     padding: 15px 20px;
   }
 
+  /* Hide desktop theme toggle on mobile */
+  .theme-switch {
+    display: none;
+  }
+
   .logo-title {
     display: none;
   }
@@ -215,7 +294,7 @@
     top: 64px;
     left: -100%;
     flex-direction: column;
-    background-color: #000;
+    background-color: var(--bg-primary);
     width: 100%;
     padding: 20px 0;
     gap: 20px;
@@ -246,7 +325,37 @@
     font-family: "Geist", sans-serif;
     font-style: normal;
     font-weight: 500;
+    color: var(--text-primary);
   }
+}
+
+/* Theme Toggle in Menu */
+.theme-switch-menu {
+  width: 100%;
+  display: none;
+  padding: 12px 20px;
+}
+
+@media (max-width: 767px) {
+  .theme-switch-menu {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+/* Menu pill button styling */
+.theme-switch-menu .theme-switch {
+  width: 50px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 50px;
+  /* border: 2px solid var(--border-color); */
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 3px;
 }
 
 /* Small Mobile (max-width: 480px) */

@@ -12,7 +12,7 @@
   font-family: "Geist", sans-serif;
   font-size: 60px;
   font-weight: 700;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   margin: 0;
   text-align: center;
   margin-bottom: 50px;
@@ -28,14 +28,13 @@
 .card {
   display: flex;
   width: 25%;
-  border: 1px solid #1f1f1f;
+  border: 1px solid var(--border-color);
   height: 600px;
   border-radius: 2%;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #0a0a0a;
   padding: 1px;
-  background-color: #000000;
+  background-color: var(--bg-primary);
 }
 
 .card img {
@@ -57,7 +56,7 @@
   font-size: 25px;
   font-style: normal;
   font-weight: 600;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   padding: 0;
   margin: 0;
 }
@@ -67,14 +66,14 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
 }
 .card-info .project-desc {
   font-family: "Geist", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  color: rgb(237, 237, 237);
+  color: var(--text-secondary);
 }
 .card-info .project-tech {
   list-style: none;
@@ -92,14 +91,14 @@
   font-family: "Geist", sans-serif;
   font-weight: 300;
   font-size: 13px;
-  color: rgb(237, 237, 237);
-  /* border: 0.5px solid rgb(237, 237, 237); */
+  color: var(--text-primary);
+  border: 0.1px solid var(--bg-secondary);
   padding-right: 7px;
   padding-left: 7px;
   padding-top: 4px;
   padding-bottom: 4px;
   border-radius: 7px;
-  background: #1f1f1f;
+  background: var(--bg-primary);
   text-align: center;
   line-height: 15px;
   align-self: center;
@@ -121,6 +120,10 @@
 .card-actions a img {
   width: 25px;
   height: 25px;
+  filter: var(--tech-logo-filter, none);
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 .card-footer {
   width: 100%;
@@ -148,7 +151,7 @@
 .btn-text {
   font-family: "Geist", sans-serif;
   font-size: 14px;
-  color: rgb(237, 237, 237);
+  color: var(--text-primary);
   margin-left: 0;
   opacity: 0;
   max-width: 0;
