@@ -2,11 +2,13 @@ import "./Nav.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { themeContext } from "../../store/modeCtx";
+import { useTranslation } from "react-i18next";
 
 export default function MainNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const { theme, handleSetTheme } = useContext(themeContext);
+  const { i18n, t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,6 +16,11 @@ export default function MainNavigation() {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const handleLanguageChange = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem("language", lng);
   };
 
   const handleProjectsClick = (e) => {
@@ -90,7 +97,7 @@ export default function MainNavigation() {
           }
           style={{ animationDelay: "0s" }}>
           <Link to="/" onClick={closeMenu}>
-            Home
+            {t("nav.home")}
           </Link>
         </li>
         <li
@@ -101,7 +108,7 @@ export default function MainNavigation() {
           }
           style={{ animationDelay: "0.4s" }}>
           <a href="#projects" onClick={handleProjectsClick}>
-            Projects
+            {t("nav.projects")}
           </a>
         </li>
         <li
@@ -112,7 +119,7 @@ export default function MainNavigation() {
           }
           style={{ animationDelay: "0.8s" }}>
           <a href="#about" onClick={handleAboutClick}>
-            About-me
+            {t("nav.about")}
           </a>
         </li>
         <li
@@ -123,7 +130,7 @@ export default function MainNavigation() {
           }
           style={{ animationDelay: "1.2s" }}>
           <a href="#contact" onClick={handleContactClick}>
-            Contact
+            {t("nav.contact")}
           </a>
         </li>
         <li
@@ -133,7 +140,21 @@ export default function MainNavigation() {
               : ""
           }
           style={{ animationDelay: "1.6s" }}>
-          EN
+          <div className="language-toggle">
+            <input
+              type="checkbox"
+              id="lang-toggle"
+              checked={i18n.language === "fr"}
+              onChange={(e) =>
+                handleLanguageChange(e.target.checked ? "fr" : "en")
+              }
+            />
+            <label htmlFor="lang-toggle">
+              <span className="lang-label en">EN</span>
+              <span className="lang-slider"></span>
+              <span className="lang-label fr">FR</span>
+            </label>
+          </div>
         </li>
         <li
           className={`theme-switch-menu ${

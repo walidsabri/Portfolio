@@ -1,6 +1,7 @@
 import "./projectsComp.css";
 
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import more from "../../assets/more.png";
 import code from "../../assets/code.png";
 import { projects } from "../../PROJECTS.js";
@@ -8,19 +9,23 @@ import { projects } from "../../PROJECTS.js";
 // Project data array
 
 export default function ProjectsComp() {
+  const { t } = useTranslation();
   return (
     <section className="projects-container" id="/projects">
-      <h3 className="p-title">My works</h3>
+      <h3 className="p-title">{t("projects.title")}</h3>
 
       <div className="projects-cards">
         {projects.map((project) => (
           <div className="card" key={project.id}>
-            <img src={project.img} alt={`${project.title} project preview`} />
+            <img
+              src={project.img}
+              alt={`${t(project.titleKey)} project preview`}
+            />
 
             <div className="card-info">
-              <h4>{project.title}</h4>
-              <p className="project-type">{project.type}</p>
-              <p className="project-desc">{project.desc}</p>
+              <h4>{t(project.titleKey)}</h4>
+              <p className="project-type">{t(project.typeKey)}</p>
+              <p className="project-desc">{t(project.descKey)}</p>
 
               <div className="card-footer">
                 <ul className="project-tech">

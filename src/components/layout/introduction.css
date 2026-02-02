@@ -213,13 +213,15 @@
    SECOND INTRO
 ========================= */
 .seconde-intro {
-  padding: 40px;
+  padding: 50px 35px;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
   position: relative;
   box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .seconde-intro::after {
@@ -241,6 +243,9 @@
   font-size: 30px;
   font-weight: 500;
   color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0;
 }
 
 .name-2 {
@@ -248,6 +253,8 @@
   font-family: "Geist", sans-serif;
   font-size: 30px;
   font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* =========================
@@ -446,6 +453,10 @@
   .seconde-intro .name {
     font-size: 20px;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
 
   .seconde-intro .name-2 {
@@ -471,8 +482,8 @@
   .btns-group .about-me-btn,
   .btns-group .res-btn {
     font-size: 15px;
-    padding: 7px 3px;
-    width: 50%;
+    padding: 7px;
+    width: fit-content;
   }
   .about-btn-div {
     width: 60%;

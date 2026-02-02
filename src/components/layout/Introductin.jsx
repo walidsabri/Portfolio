@@ -1,8 +1,9 @@
+import { useTranslation } from "react-i18next";
 import "./introduction.css";
 
 export default function Introduction() {
+  const { t } = useTranslation();
   const handleDownloadResume = () => {
-    // Create a link element
     const link = document.createElement("a");
     link.href = "/Walid_Sabri_Resume.pdf"; // Path to your resume in public folder
     link.download = "Walid_Sabri_Resume.pdf"; // Downloaded filename
@@ -23,13 +24,13 @@ export default function Introduction() {
         <span className="v-line right"></span>
 
         <div className="first-intro">
-          <p className="first-intro-txt">I build the web with intention.</p>
+          <p className="first-intro-txt">{t("intro.title")}</p>
         </div>
 
         <div className="seconde-intro">
-          <p className="name">I'm Walid Sabri,</p>
           <p className="name-2">
-            I enjoy crafting interfaces where simplicity meets performance.
+            <span className="name">{t("intro.name")} </span>
+            {t("intro.description")}
           </p>
         </div>
 
@@ -47,7 +48,7 @@ export default function Introduction() {
 
           <div className="about-btn-div">
             <div className="btns-group">
-              <button className="about-me-btn">About Me</button>
+              <button className="about-me-btn">{t("intro.aboutBtn")}</button>
               <button className="res-btn" onClick={handleDownloadResume}>
                 <svg
                   className="download-icon"
@@ -64,10 +65,10 @@ export default function Introduction() {
                   <polyline points="7 10 12 15 17 10"></polyline>
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
-                My resume
+                {t("intro.resumeBtn")}
               </button>
             </div>
-            <p>~ Front-end Developer</p>
+            <p>{t("intro.role")}</p>
           </div>
 
           <div className="empty-2">

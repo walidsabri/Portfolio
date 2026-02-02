@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "intro": {
+    "title": "Je construis le web avec intention.",
+    "name": "Je suis Walid Sabri",
+    "description": "J'aime créer des interfaces où la simplicité rencontre la performance.",
+    "aboutBtn": "À Propos de Moi",
+    "resumeBtn": "Mon CV",
+    "role": "~ Développeur Front-end"
+  },
+  "about": {
+    "title": "Qui suis-je?",
+    "description1": "Je suis Walid Sabri, diplômé en informatique et développeur frontend junior passionné par la création d'expériences web évolutives et intuitives avec React.js. Je privilégie une architecture propre, la performance et transformer les idées en interfaces fiables et agréables à utiliser.",
+    "description2": "Au-delà de la programmation, j'aime expérimenter de nouveaux concepts, améliorer mes projets personnels et constamment repousser mes compétences à travers des défis pratiques et concrets.",
+    "technologiesTitle": "Technologiess",
+    "technologiesSubtitle": "Outils et technologies que j'utilise pour construire des applications frontend modernes et scalables."
+  },
+  "projects": {
+    "title": "Mes travaux"
+  },
+  "projectDetails": {
+    "backBtn": "Retour à l'accueil",
+    "technologiesTitle": "Technologiess"
+  },
+  "contact": {
+    "title": "Créons quelque chose",
+    "subtitle": "Vous avez un projet en tête ou vous voulez collaborer? Je suis toujours ouvert aux nouvelles idées et opportunités.",
+    "formName": "Nom",
+    "formEmail": "Email",
+    "formEmailPlaceholder": "votre@email.com",
+    "formMessage": "Message",
+    "formMessagePlaceholder": "Parlez-moi de votre projet...",
+    "sendBtn": "Parlons",
+    "sendingBtn": "Envoi...",
+    "successMsg": "Message envoyé avec succès! 🎉",
+    "errorMsg": "Échec de l'envoi du message. Veuillez réessayer.",
+    "socialTitle": "Mes réseaux sociaux",
+    "socialSubtitle": "Trouvez-moi ici",
+    "copyright": "© 2026 Walid Sabri. Construit avec React & ⚡ par moi"
+  },
+  "projectsList": {
+    "project1": {
+      "title": "Winner Art",
+      "type": "Plateforme de gestion d'école d'art",
+      "desc": "Une plateforme réelle développée pour une école d'art pour présenter les activités, gérer le contenu et présenter les travaux des étudiants.",
+      "details": "Winner Art est une plateforme complète conçue pour les écoles d'art. Elle permet aux écoles de gérer leurs cours, présenter leurs offres et fournir une expérience transparente aux étudiants pour s'inscrire à des cours et acheter des instruments d'art. La plateforme intègre des fonctionnalités de gestion de contenu, de présentation des travaux étudiants et de suivi des activités, ce qui en fait un outil essentiel pour l'éducation artistique.",
+      "process": "Le processus de développement a impliqué une collaboration étroite avec l'école d'art pour recueillir les exigences et concevoir une plateforme adaptée à leurs besoins. Le frontend a été construit avec React, en exploitant les composants réutilisables et la gestion d'état pour une expérience utilisateur fluide. Le backend a été implémenté en PHP pour gérer l'authentification des utilisateurs, le traitement des données et la communication avec la base de données MySQL. La plateforme inclut également des fonctionnalités telles que des passerelles de paiement sécurisées et des fonctionnalités de commerce électronique pour l'achat de fournitures d'art."
+    },
+    "project2": {
+      "title": "Reedz",
+      "type": "Plateforme de discussion style Reddit (Projet final du Bachelor)",
+      "desc": "Une plateforme inspirée de Reddit construite avec React, axée sur une architecture frontale scalable, des composants réutilisables et une gestion d'état efficace.",
+      "details": "Reedz est une plateforme de discussion inspirée de Reddit, conçue pour faciliter les discussions dirigées par la communauté. Elle dispose d'une architecture frontale scalable, de composants réutilisables et d'une gestion d'état efficace. Les utilisateurs peuvent créer des messages, commenter et s'engager dans des discussions, ce qui en fait une plateforme dynamique et interactive pour partager des idées.",
+      "process": "Le processus de développement s'est concentré sur la création d'une architecture frontale scalable et modulaire en utilisant React. L'API Context a été implémentée pour gérer efficacement l'état de l'application, garantissant une expérience utilisateur fluide. Firebase a été utilisé pour gérer la synchronisation des données en temps réel et l'authentification des utilisateurs, ce qui rend la plateforme hautement interactive et réactive. Le projet a également souligné la création de composants réutilisables pour assurer la maintenabilité et la scalabilité."
+    }
+  }
+}

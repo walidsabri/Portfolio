@@ -1,12 +1,14 @@
 import "./ProjectsDetails.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { projects } from "../../PROJECTS.js";
 import back from "../../assets/back.png";
 
 import ContactMe from "./ContactMe";
 
 export default function ProjectsDetails() {
+  const { t } = useTranslation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -21,16 +23,16 @@ export default function ProjectsDetails() {
       <section className="project-details-container">
         <Link to="/" className="back-btn">
           <img src={back} alt="" />
-          Back to home
+          {t("projectDetails.backBtn")}
         </Link>
         <h3 className="project-d-title">
           <img src={project.logo} alt="" />
-          {project.title}
+          {t(project.titleKey)}
         </h3>
-        <p className="project-details-txt">{project.details}</p>
-        <p className="process">{project.process}</p>
+        <p className="project-details-txt">{t(project.detailsKey)}</p>
+        <p className="process">{t(project.processKey)}</p>
         <div className="tech-used">
-          <p>Technologies</p>
+          <p>{t("projectDetails.technologiesTitle")}</p>
           <ul className="tech-list">
             {project.tech.map((ptech) => (
               <li key={ptech.id}>{ptech}</li>

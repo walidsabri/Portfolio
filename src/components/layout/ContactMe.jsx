@@ -1,6 +1,7 @@
 import "./contactme.css";
 import useAnimateOnScroll from "../../Hooks/useAnimateOnScroll";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import gmail from "../../assets/gmail.png";
 import github from "../../assets/github.png";
 import phone from "../../assets/phone.png";
@@ -8,6 +9,7 @@ import ln from "../../assets/ln.png";
 import emailjs from "@emailjs/browser";
 
 export default function ContactMe() {
+  const { t } = useTranslation();
   const [ref, isVisible] = useAnimateOnScroll();
   const [userData, setUserData] = useState({
     name: "",
@@ -54,12 +56,9 @@ export default function ContactMe() {
     <section ref={ref} className="contact-container" id="/contact">
       <h3
         className={`title animate__animated ${isVisible ? "animate__zoomIn" : ""}`}>
-        Let’s Build Something
+        {t("contact.title")}
       </h3>
-      <p className="contact-subtitle">
-        Have a project in mind or want to work together? I’m always open to new
-        ideas and opportunities.
-      </p>
+      <p className="contact-subtitle">{t("contact.subtitle")}</p>
       <div className="form-social">
         <form
           // action=""
@@ -76,7 +75,7 @@ export default function ContactMe() {
           <label htmlFor="">Email</label>
           <input
             type="email"
-            placeholder="your@email.com"
+            placeholder={t("contact.formEmailPlaceholder")}
             required
             onChange={handleChange}
             name="email"
@@ -86,28 +85,26 @@ export default function ContactMe() {
           <textarea
             name="message"
             id=""
-            placeholder="Tell me about your project..."
+            placeholder={t("contact.formMessagePlaceholder")}
             required
             onChange={handleChange}
             value={userData.message}></textarea>
           <button className="send-btn" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Let's talk"}
+            {status === "sending"
+              ? t("contact.sendingBtn")
+              : t("contact.sendBtn")}
           </button>
           {status === "success" && (
-            <p className="form-message success">
-              Message sent successfully! 🎉
-            </p>
+            <p className="form-message success">{t("contact.successMsg")}</p>
           )}
           {status === "error" && (
-            <p className="form-message error">
-              Failed to send message. Please try again.
-            </p>
+            <p className="form-message error">{t("contact.errorMsg")}</p>
           )}
         </form>
         <div
           className={`social animate__animated ${isVisible ? "animate__fadeInLeft" : ""}`}>
-          <h3 className="social-title">My social</h3>
-          <p className="links-substitle">Find me here</p>
+          <h3 className="social-title">{t("contact.socialTitle")}</h3>
+          <p className="links-substitle">{t("contact.socialSubtitle")}</p>
           <div className="links">
             <a href="tel:+213563826556">
               <img src={phone} alt="" />
@@ -126,9 +123,7 @@ export default function ContactMe() {
           </div>
         </div>
       </div>
-      <p className="copyright-txt">
-        © 2026 Walid Sabri. Built with React & ⚡ by me{" "}
-      </p>
+      <p className="copyright-txt">{t("contact.copyright")}</p>
     </section>
   );
 }
