@@ -12,6 +12,13 @@ export default function Introduction() {
     document.body.removeChild(link);
   };
 
+  const handleAboutMeClick = () => {
+    const aboutSection = document.getElementById("/about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="Header">
       <div className="empty-top">
@@ -48,7 +55,9 @@ export default function Introduction() {
 
           <div className="about-btn-div">
             <div className="btns-group">
-              <button className="about-me-btn">{t("intro.aboutBtn")}</button>
+              <button className="about-me-btn" onClick={handleAboutMeClick}>
+                {t("intro.aboutBtn")}
+              </button>
               <button className="res-btn" onClick={handleDownloadResume}>
                 <svg
                   className="download-icon"

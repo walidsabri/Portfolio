@@ -35,7 +35,6 @@ export default function ProjectsComp() {
                 </ul>
 
                 <div className="card-actions">
-                  {/* Pass project data via state */}
                   <Link
                     to={`/project/${project.id}`}
                     state={{ project }}
